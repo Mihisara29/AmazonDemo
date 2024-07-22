@@ -132,9 +132,8 @@ document.querySelectorAll('.js-update-quantity-link').forEach((link)=>{
   
    document.querySelector(`.js-save-quantity-link-${productId}`).innerHTML = 'Save';
 
-   document.querySelector('.cart-item-container').classList.add('is-editing-quantity');
+   document.querySelector(`.js-cart-item-container-${productId}`).classList.add('is-editing-quantity');
   
-    
   });
   
   });
