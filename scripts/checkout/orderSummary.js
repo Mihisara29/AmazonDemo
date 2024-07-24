@@ -4,6 +4,9 @@ import { formatCurrency } from "../utils/money.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions } from "../../data/deliveryOptions.js";
 
+
+
+
 export function renderOrderSummary(){
 
 document.querySelector('.js-checkout-header-middle-section').innerHTML=`Checkout (${localStorage.getItem('cartQuantity')} items)`
