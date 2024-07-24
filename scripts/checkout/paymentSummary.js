@@ -7,10 +7,13 @@ export function renderPaymentSummary(){
 
   let productPriceCents = 0;
   let shippingPriceCents = 0;
+  let items=0;
 
   cart.forEach((cartItem) => {
     
     const product = getProduct(cartItem.productId);
+
+    items += cartItem.quantity;
 
     productPriceCents += product.priceCents * cartItem.quantity
 
@@ -31,7 +34,7 @@ export function renderPaymentSummary(){
           </div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${items}):</div>
             <div class="payment-summary-money">$${ formatCurrency(productPriceCents)}</div>
           </div>
 
@@ -52,7 +55,7 @@ export function renderPaymentSummary(){
 
           <div class="payment-summary-row total-row">
             <div>Order total:</div>
-            <div class="payment-summary-money">$${formatCurrency(taxCents)}</div>
+            <div class="payment-summary-money">$${formatCurrency(totalCents)}</div>
           </div>
 
           <button class="place-order-button button-primary">

@@ -3,6 +3,7 @@ import { products,getProduct} from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions ,getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 
 
@@ -146,6 +147,7 @@ link.addEventListener('click',()=>{
 
   container.remove();
 
+  renderPaymentSummary();
   
   
 });
@@ -186,6 +188,7 @@ document.querySelectorAll('.js-update-quantity-link').forEach((link)=>{
 
           document.querySelector('.js-checkout-header-middle-section').innerHTML=`Checkout (${localStorage.getItem('cartQuantity')} items)`
     
+         renderPaymentSummary();
 
    });
 
@@ -202,6 +205,7 @@ document.querySelectorAll('.js-update-quantity-link').forEach((link)=>{
 
     updateDeliveryOption(productId,deliveryOptionId);
     renderOrderSummary();
+    renderPaymentSummary();
 
    });
 
